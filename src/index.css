@@ -1,0 +1,4 @@
+.custom-img-style img {
+	object-fit: cover;
+	height: fit-content;
+}

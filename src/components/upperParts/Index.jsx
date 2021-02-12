@@ -18,7 +18,7 @@ const Index = () => {
 			<div className="sixteen wide column">
 				<div className="ui fluid icon input">
 					<input type="text" placeholder="Search Movies..." />
-					<i class="search icon"></i>
+					<i className="search icon"></i>
 				</div>
 			</div>
 		</div>
