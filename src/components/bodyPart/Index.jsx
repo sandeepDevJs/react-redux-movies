@@ -4,20 +4,34 @@ import { connect } from "react-redux";
 import { getMoviesAction } from "../../actions/movieActions";
 
 class Index extends Component {
+	componentDidMount() {
+		this.props.getMoviesAction();
+	}
+
 	render() {
-		return (
-			<div className="ui padded grid">
-				<div className="ui stackable four column grid">
-					<Movie />
-					<Movie />
-					<Movie />
-					<Movie src="https://2l7g9kgsh281akevs49v281d-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/Spider-Man-Far-From-Home-Trailer-e1561734444434-1132x670.jpg" />
+		console.log(this.props.moviesState);
+		if (this.props.moviesState.movies) {
+			return (
+				<div className="ui padded grid">
+					<div className="ui stackable four column grid">
+						{this.props.moviesState.movies.results.map((mdt) => (
+							<Movie key={mdt.id} data={mdt} />
+						))}
+					</div>
 				</div>
-			</div>
-		);
+			);
+		}
+
+		if (this.props.moviesState.loading) {
+			return <h1>Loading..</h1>;
+		}
+
+		return <h1>Loading..</h1>;
 	}
 }
 
 const mapStateToProps = (state) => {
 	return { moviesState: state.moviesState };
 };
+
+export default connect(mapStateToProps, { getMoviesAction })(Index);
