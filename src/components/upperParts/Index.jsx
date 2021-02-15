@@ -13,6 +13,7 @@ const Index = () => {
 							className="ui huge header"
 							style={{
 								"font-family": "Cabin",
+								color: "white",
 							}}
 						>
 							Welcome.
@@ -22,6 +23,7 @@ const Index = () => {
 							className="ui large header"
 							style={{
 								"font-family": "Cabin",
+								color: "white",
 							}}
 						>
 							Millions of movies, TV shows and people to discover. Explore now.

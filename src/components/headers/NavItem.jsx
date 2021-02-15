@@ -2,7 +2,7 @@ import React from "react";
 
 const NavItem = ({ children, href }) => {
 	return (
-		<a href={href} className="item">
+		<a href={href} className="item" style={{ color: "white" }}>
 			{children}
 		</a>
 	);

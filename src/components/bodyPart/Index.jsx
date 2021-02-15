@@ -9,12 +9,11 @@ class Index extends Component {
 	}
 
 	render() {
-		console.log(this.props.moviesState);
 		if (this.props.moviesState.movies) {
 			return (
 				<div className="ui container">
-					<div className="ui padded grid">
-						<div className="ui stackable four column grid centerOnMb">
+					<div className="ui padded centered grid">
+						<div className="ui stackable four column grid">
 							{this.props.moviesState.movies.results.map((mdt) => (
 								<Movie key={mdt.id} data={mdt} />
 							))}
