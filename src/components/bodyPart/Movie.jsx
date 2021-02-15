@@ -8,7 +8,7 @@ const Movie = ({ data }) => {
 				<div className="ui medium rounded slide masked reveal image">
 					<img
 						src={IMG_API + data.poster_path}
-						className="visible content"
+						className="visible content rounded image"
 						alt=""
 					/>
 					<div className="hidden content" style={{ padding: "1rem" }}>
