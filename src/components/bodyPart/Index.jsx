@@ -12,11 +12,13 @@ class Index extends Component {
 		console.log(this.props.moviesState);
 		if (this.props.moviesState.movies) {
 			return (
-				<div className="ui padded grid">
-					<div className="ui stackable four column grid">
-						{this.props.moviesState.movies.results.map((mdt) => (
-							<Movie key={mdt.id} data={mdt} />
-						))}
+				<div className="ui container">
+					<div className="ui padded grid">
+						<div className="ui stackable four column grid centerOnMb">
+							{this.props.moviesState.movies.results.map((mdt) => (
+								<Movie key={mdt.id} data={mdt} />
+							))}
+						</div>
 					</div>
 				</div>
 			);

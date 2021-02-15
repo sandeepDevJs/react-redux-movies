@@ -10,8 +10,10 @@ function App() {
 	return (
 		<Provider store={store}>
 			<Container>
-				<Nav />
-				<UpperPart />
+				<div className="mainDiv">
+					<Nav />
+					<UpperPart />
+				</div>
 				<BodyPart />
 			</Container>
 		</Provider>

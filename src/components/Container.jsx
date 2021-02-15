@@ -1,7 +1,7 @@
 import React from "react";
 
 const Container = ({ children }) => {
-	return <div className="ui container">{children}</div>;
+	return <div>{children}</div>;
 };
 
 export default Container;

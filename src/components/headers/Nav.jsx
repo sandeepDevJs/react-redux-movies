@@ -3,9 +3,11 @@ import NavItem from "./NavItem";
 
 const Nav = () => {
 	return (
-		<div className="ui secondary menu">
-			<NavItem>Home</NavItem>
-			<NavItem>About</NavItem>
+		<div className="ui container">
+			<div className="ui secondary menu">
+				<NavItem>Home</NavItem>
+				<NavItem>About</NavItem>
+			</div>
 		</div>
 	);
 };
