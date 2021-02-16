@@ -4,7 +4,13 @@ const IMG_API = "http://image.tmdb.org/t/p/w185";
 const Movie = ({ data }) => {
 	return (
 		<div className="column">
-			<div className="ui card">
+			<div
+				className="ui card"
+				style={{
+					"box-shadow":
+						"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+				}}
+			>
 				<div className="ui medium rounded slide masked reveal image">
 					<img
 						src={IMG_API + data.poster_path}
@@ -15,12 +21,16 @@ const Movie = ({ data }) => {
 						{data.overview}
 					</div>
 				</div>
-				<div className="content">
+				<div
+					className="content"
+					style={{ backgroundColor: "#b34180", color: "white" }}
+				>
 					<div className="rating-circle">{data.vote_average}</div>
 					<h3
 						className="header"
 						style={{
 							"font-family": "Cabin",
+							color: "white",
 						}}
 					>
 						{data.title ? data.title : data.original_name}
