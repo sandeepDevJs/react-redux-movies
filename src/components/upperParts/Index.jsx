@@ -12,7 +12,7 @@ const Index = () => {
 						<span
 							className="ui huge header"
 							style={{
-								"font-family": "Cabin",
+								fontFamily: "Cabin",
 								color: "white",
 							}}
 						>
@@ -22,7 +22,7 @@ const Index = () => {
 						<span
 							className="ui large header"
 							style={{
-								"font-family": "Cabin",
+								fontFamily: "Cabin",
 								color: "white",
 							}}
 						>

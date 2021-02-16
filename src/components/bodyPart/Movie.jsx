@@ -7,7 +7,7 @@ const Movie = ({ data }) => {
 			<div
 				className="ui card"
 				style={{
-					"box-shadow":
+					boxShadow:
 						"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
 				}}
 			>
@@ -29,7 +29,7 @@ const Movie = ({ data }) => {
 					<h3
 						className="header"
 						style={{
-							"font-family": "Cabin",
+							fontFamily: "Cabin",
 							color: "white",
 						}}
 					>
@@ -38,7 +38,7 @@ const Movie = ({ data }) => {
 					<span
 						className="date"
 						style={{
-							"font-family": "Cabin",
+							fontFamily: "Cabin",
 						}}
 					>
 						{data.release_date ? data.release_date : data.first_air_date}
