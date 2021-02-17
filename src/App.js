@@ -5,6 +5,7 @@ import Container from "./components/Container";
 import Nav from "./components/headers/Nav";
 import UpperPart from "./components/upperParts/Index";
 import BodyPart from "./components/bodyPart/Index";
+import Footers from "./components/footers/Index";
 import "./index.css";
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 					<UpperPart />
 				</div>
 				<BodyPart />
+				<Footers />
 			</Container>
 		</Provider>
 	);
