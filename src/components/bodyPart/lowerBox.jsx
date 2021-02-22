@@ -1,4 +1,5 @@
 import React from "react";
+import Trailer from "./Trailer";
 
 const lowerBox = () => {
 	return (
@@ -27,6 +28,17 @@ const lowerBox = () => {
 				</p>
 
 				<button class="ui primary button">Sign Up</button>
+				<div className="trailer-container">
+					<Trailer />
+					<Trailer />
+					<Trailer />
+					<Trailer />
+					<Trailer />
+					<Trailer />
+					<Trailer />
+					<Trailer />
+					<Trailer />
+				</div>
 			</div>
 		</div>
 	);

@@ -1,6 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Container from "./components/Container";
 import Nav from "./components/headers/Nav";
 import UpperPart from "./components/upperParts/Index";
@@ -10,14 +11,14 @@ import "./index.css";
 function App() {
 	return (
 		<Provider store={store}>
-			<Container>
-				<div className="mainDiv">
+			<Router>
+				<Container>
 					<Nav />
 					<UpperPart />
-				</div>
-				<BodyPart />
-				<Footers />
-			</Container>
+					<BodyPart />
+					<Footers />
+				</Container>
+			</Router>
 		</Provider>
 	);
 }
