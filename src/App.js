@@ -1,6 +1,4 @@
 import React from "react";
-import { Provider } from "react-redux";
-import { store } from "./store";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Container from "./components/Container";
 import Nav from "./components/headers/Nav";
@@ -10,16 +8,14 @@ import Footers from "./components/footers/Index";
 import "./index.css";
 function App() {
 	return (
-		<Provider store={store}>
-			<Router>
-				<Container>
-					<Nav />
-					<UpperPart />
-					<BodyPart />
-					<Footers />
-				</Container>
-			</Router>
-		</Provider>
+		<Router>
+			<Container>
+				<Nav />
+				<UpperPart />
+				<Route path="/" component={BodyPart} />
+				<Footers />
+			</Container>
+		</Router>
 	);
 }
 

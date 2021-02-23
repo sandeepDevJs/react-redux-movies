@@ -45,19 +45,21 @@ span {
 	background-image: linear-gradient(
 			to bottom,
 			rgba(245, 246, 252, 0.52),
-			#b34180
+			#5c4978
 		),
 		url("https://i0.wp.com/marvelstudiosnews.com/wp-content/uploads/2018/12/AEG-Trailer-100001.png?fit=1920%2C800&quality=80&strip=info&ssl=1");
 	background-size: cover;
 	color: white;
 	background-repeat: no-repeat;
 	padding: 3rem;
+	margin-bottom: 0;
 }
 
 .trailer-container {
+	position: static;
 	display: flex;
 	flex-direction: row;
-	overflow: hidden;
+	overflow-x: scroll;
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none;
 }
@@ -69,13 +71,14 @@ span {
 .video {
 	font-size: 30px;
 	padding: 50px;
-	width: 25%;
-	min-width: 25%;
+	width: 200px;
+	min-width: 200px;
 	background-size: cover;
 	text-align: center;
 	border-radius: 10px;
 	margin-top: 20px;
-	margin-left: 6px;
+	margin-left: 0px;
+	margin-right: 6px;
 }
 
 footer {
