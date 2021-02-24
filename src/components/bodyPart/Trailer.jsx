@@ -9,7 +9,7 @@ const Trailer = () => {
 				backgroundImage: `url(${IMG_API}/vfuzELmhBjBTswXj2Vqxnu5ge4g.jpg)`,
 			}}
 		>
-			<i class="fas fa-play"></i>
+			<i className="fas fa-play"></i>
 		</div>
 	);
 };

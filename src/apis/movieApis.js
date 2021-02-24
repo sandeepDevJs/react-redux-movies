@@ -15,4 +15,4 @@ const config = {
 
 export const getMoviesApi = () => axios.get(homePageMovies, config);
 export const getUpcomingsApi = () =>
-	axios.get(`${API_PREFIX}/movie/upcoming?api_key=${API_KEY}`);
+	axios.get(`${API_PREFIX}/movie/upcoming?api_key=${API_KEY}`, config);

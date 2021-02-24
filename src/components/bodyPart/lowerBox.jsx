@@ -23,9 +23,9 @@ class lowerBox extends React.Component {
 					</h1>
 
 					<div className="trailer-container">
-						{this.props.upcomingState.movies
+						{/* {this.props.upcomingState.movies
 							? this.props.upcomingState.movies.map((item) => <Trailer />)
-							: ""}
+							: ""} */}
 					</div>
 					<h1
 						className="ui huge header"
