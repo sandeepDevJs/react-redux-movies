@@ -19,6 +19,7 @@ class Trailer extends React.Component {
 				}}
 			>
 				<i onClick={() => this.openTrailer()} className="fas fa-play"></i>
+				{/* <p>{this.props.data.title}</p> */}
 			</div>
 		);
 	}
