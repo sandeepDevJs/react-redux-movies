@@ -2,11 +2,24 @@ import React from "react";
 import { connect } from "react-redux";
 import { getUpcomingsAction } from "../../actions/movieActions";
 import Trailer from "./Trailer";
+import Modal from "../Modal";
 
 class lowerBox extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			open: false,
+		};
+	}
+
 	componentDidMount() {
 		this.props.getUpcomingsAction();
+		console.log(this.props.upcomingState);
 	}
+
+	changeModal = (bool) => {
+		this.setState({ open: bool });
+	};
 
 	render() {
 		return (
@@ -19,13 +32,19 @@ class lowerBox extends React.Component {
 							color: "white",
 						}}
 					>
-						Latest Trailers
+						Upcomings
 					</h1>
 
 					<div className="trailer-container">
-						{/* {this.props.upcomingState.movies
-							? this.props.upcomingState.movies.map((item) => <Trailer />)
-							: ""} */}
+						{this.props.upcomingState.movies
+							? this.props.upcomingState.movies.map((item) => (
+									<Trailer
+										key={item.id}
+										data={item}
+										changeModal={this.changeModal}
+									/>
+							  ))
+							: ""}
 					</div>
 					<h1
 						className="ui huge header"
@@ -51,6 +70,7 @@ class lowerBox extends React.Component {
 					</p>
 					<button className="ui primary button">Sign Up</button>
 				</div>
+				<Modal open={this.state.open} modalFun={this.changeModal} />
 			</div>
 		);
 	}

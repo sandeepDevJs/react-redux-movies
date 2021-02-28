@@ -1,17 +1,27 @@
 import React from "react";
+import { connect } from "react-redux";
+import { getVideoById } from "../../actions/movieActions";
+
 const IMG_API = "http://image.tmdb.org/t/p/w185";
 
-const Trailer = () => {
-	return (
-		<div
-			className="ui centered video"
-			style={{
-				backgroundImage: `url(${IMG_API}/vfuzELmhBjBTswXj2Vqxnu5ge4g.jpg)`,
-			}}
-		>
-			<i className="fas fa-play"></i>
-		</div>
-	);
-};
+class Trailer extends React.Component {
+	openTrailer = () => {
+		this.props.changeModal(true);
+		this.props.getVideoById(this.props.data.id);
+	};
 
-export default Trailer;
+	render() {
+		return (
+			<div
+				className="ui centered video"
+				style={{
+					backgroundImage: `url(${IMG_API}/${this.props.data.poster_path})`,
+				}}
+			>
+				<i onClick={() => this.openTrailer()} className="fas fa-play"></i>
+			</div>
+		);
+	}
+}
+
+export default connect(null, { getVideoById })(Trailer);
