@@ -1,6 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Button, Header, Icon, Modal, Dimmer, Loader } from "semantic-ui-react";
+import {
+	Button,
+	Header,
+	Icon,
+	Modal,
+	Dimmer,
+	Loader,
+	Message,
+} from "semantic-ui-react";
 
 const ModalBox = (props) => {
 	return (
@@ -13,7 +21,7 @@ const ModalBox = (props) => {
 				size="small"
 			>
 				<Header>
-					<Dimmer active={!props.videosData.movies}>
+					<Dimmer active={props.videosData.loading}>
 						<Loader indeterminate>Preparing Video</Loader>
 					</Dimmer>
 				</Header>
@@ -29,12 +37,26 @@ const ModalBox = (props) => {
 							allowFullScreen
 						></iframe>
 					)}
+
+					{props.errorModal && (
+						<Message
+							error
+							header="OOPPS!! There was some errors!"
+							list={[`Try Reloading Again!!`]}
+						/>
+					)}
 				</Modal.Content>
 				<Modal.Actions>
 					<center>
-						<Button basic inverted onClick={() => props.modalFun(false)}>
-							<Icon name="remove" />
-						</Button>
+						{props.errorModal ? (
+							<Button basic inverted onClick={() => window.location.reload()}>
+								<Icon name="reload" />
+							</Button>
+						) : (
+							<Button basic inverted onClick={() => props.modalFun(false)}>
+								<Icon name="remove" />
+							</Button>
+						)}
 					</center>
 				</Modal.Actions>
 			</Modal>
