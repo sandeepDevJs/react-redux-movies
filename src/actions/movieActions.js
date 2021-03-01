@@ -12,14 +12,15 @@ import {
 
 import {
 	getMoviesApi,
+	getFromSearchApi,
 	getUpcomingsApi,
 	getTrailerById,
 } from "../apis/movieApis";
 
-export const getMoviesAction = () => async (dispatch) => {
+export const getMoviesAction = (keyword) => async (dispatch) => {
 	try {
 		dispatch({ type: MOVIE_GET_REQUEST });
-		let data = await getMoviesApi();
+		let data = keyword ? await getFromSearchApi(keyword) : await getMoviesApi();
 		dispatch({ type: MOVIE_GET_SUCCESS, payload: data.data });
 	} catch (error) {
 		dispatch({

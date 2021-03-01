@@ -13,9 +13,16 @@ const Movie = ({ data }) => {
 			>
 				<div className="ui medium rounded slide masked reveal image">
 					<img
-						src={IMG_API + data.poster_path}
+						src={
+							data.poster_path
+								? IMG_API + data.poster_path
+								: `https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/film.png`
+						}
 						className="visible content rounded image"
 						alt=""
+						style={{
+							maxHeight: "400px",
+						}}
 					/>
 					<div className="hidden content" style={{ padding: "1rem" }}>
 						{data.overview}

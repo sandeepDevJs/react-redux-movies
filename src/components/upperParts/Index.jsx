@@ -1,6 +1,17 @@
 import React from "react";
+import { connect } from "react-redux";
+import { Button } from "semantic-ui-react";
+import { getMoviesAction } from "../../actions/movieActions";
 
-const Index = () => {
+const Index = (props) => {
+	const ref = React.createRef();
+
+	const searchMovie = (e) => {
+		e.preventDefault();
+		let keyword = ref.current.value;
+		props.getMoviesAction(keyword);
+	};
+
 	return (
 		<div className="mainDiv">
 			<div className="ui container">
@@ -33,10 +44,14 @@ const Index = () => {
 						</p>
 					</div>
 					<div className="sixteen wide column">
-						<div className="ui fluid icon input">
-							<input type="text" placeholder="Search Movies..." />
-							<i className="search icon"></i>
-						</div>
+						<form onSubmit={(e) => searchMovie(e)}>
+							<div className="ui fluid icon input">
+								<input type="text" ref={ref} placeholder="Search Movies..." />
+								<Button type="submit">
+									<i className="search icon"></i>
+								</Button>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -44,4 +59,4 @@ const Index = () => {
 	);
 };
 
-export default Index;
+export default connect(null, { getMoviesAction })(Index);

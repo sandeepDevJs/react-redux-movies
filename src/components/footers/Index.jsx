@@ -31,8 +31,10 @@ const Index = () => {
 								<div className="column">
 									<a
 										className="ui medium header"
-										href="/"
-										// style={{ fontFamily: "sans-serif", color: "white" }}
+										href="https://github.com/sandeepDevJs"
+										style={{ fontFamily: "sans-serif" }}
+										rel="noreferrer"
+										target="_blank"
 									>
 										<i className="fab fa-github"></i>
 									</a>
@@ -40,8 +42,10 @@ const Index = () => {
 								<div className="column">
 									<a
 										className="ui medium header"
-										href="/"
-										// style={{ fontFamily: "sans-serif", color: "white" }}
+										href="https://www.linkedin.com/in/sandeepdevjs/"
+										rel="noreferrer"
+										target="_blank"
+										style={{ fontFamily: "sans-serif" }}
 									>
 										<i className="fab fa-linkedin"></i>
 									</a>
