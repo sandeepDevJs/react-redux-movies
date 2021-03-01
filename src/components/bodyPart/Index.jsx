@@ -27,7 +27,7 @@ class Index extends Component {
 				)}
 				<div className="ui container">
 					{this.props.moviesState.movies && (
-						<div className="ui padded centered grid">
+						<div className="ui centered grid">
 							<div className="ui stackable four column grid">
 								{this.props.moviesState.movies.results.map((mdt) => (
 									<Movie key={mdt.id} data={mdt} />

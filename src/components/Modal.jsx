@@ -29,8 +29,6 @@ const ModalBox = (props) => {
 					{props.videosData.movies && (
 						<iframe
 							title={props.videosData.movies[0].name}
-							width="650"
-							height="325"
 							src={`https://www.youtube.com/embed/${props.videosData.movies[0].key}`}
 							frameBorder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
