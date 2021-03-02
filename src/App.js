@@ -5,6 +5,7 @@ import Nav from "./components/headers/Nav";
 import UpperPart from "./components/upperParts/Index";
 import BodyPart from "./components/bodyPart/Index";
 import Footers from "./components/footers/Index";
+import MovieInfoScreen from "./screens/MovieInfoScreen";
 import "./index.css";
 function App() {
 	return (
@@ -12,7 +13,8 @@ function App() {
 			<Container>
 				<Nav />
 				<UpperPart />
-				<Route path="/" component={BodyPart} />
+				<Route exact path="/" component={BodyPart} />
+				<Route path="/movieinfo/:mid" component={MovieInfoScreen} />
 				<Footers />
 			</Container>
 		</Router>

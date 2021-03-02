@@ -24,3 +24,6 @@ export const getFromSearchApi = (keyword = "") =>
 
 export const getTrailerById = (movie_id) =>
 	axios.get(`${API_PREFIX}/movie/${movie_id}/videos?api_key=${API_KEY}`);
+
+export const getMovieByIdApi = (movie_id) =>
+	axios.get(`${API_PREFIX}/movie/${movie_id}?api_key=${API_KEY}`);

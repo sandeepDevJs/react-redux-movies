@@ -84,6 +84,11 @@ span {
 	margin-right: 6px;
 }
 
+.movie-info-container {
+	height: auto;
+	padding: 18px;
+}
+
 iframe {
 	width: 100%;
 	height: 400px;

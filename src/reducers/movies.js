@@ -8,6 +8,9 @@ import {
 	MOVIE_TRAILER_REQUEST,
 	MOVIE_TRAILER_SUCCESS,
 	MOVIE_TRAILER_FAIL,
+	MOVIE_BY_ID_REQUEST,
+	MOVIE_BY_ID_SUCCESS,
+	MOVIE_BY_ID_FAIL,
 } from "../constants/movies";
 
 export const getMoviesReducer = (state = {}, action) => {
@@ -52,6 +55,28 @@ export const getVideoReducer = (state = {}, action) => {
 			return { loading: false, movies: action.payload };
 
 		case MOVIE_TRAILER_FAIL:
+			return { loading: false, error: action.payload };
+
+		default:
+			return state;
+	}
+};
+
+export const getMovieByIdReducer = (state = { movies: {} }, action) => {
+	switch (action.type) {
+		case MOVIE_BY_ID_REQUEST:
+			return {
+				loading: true,
+				movies: {},
+			};
+
+		case MOVIE_BY_ID_SUCCESS:
+			return {
+				loading: false,
+				movies: action.payload,
+			};
+
+		case MOVIE_BY_ID_FAIL:
 			return { loading: false, error: action.payload };
 
 		default:

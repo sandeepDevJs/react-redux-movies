@@ -8,6 +8,9 @@ import {
 	MOVIE_TRAILER_REQUEST,
 	MOVIE_TRAILER_SUCCESS,
 	MOVIE_TRAILER_FAIL,
+	MOVIE_BY_ID_REQUEST,
+	MOVIE_BY_ID_SUCCESS,
+	MOVIE_BY_ID_FAIL,
 } from "../constants/movies";
 
 import {
@@ -15,6 +18,8 @@ import {
 	getFromSearchApi,
 	getUpcomingsApi,
 	getTrailerById,
+	getMovieByIdApi,
+	getMovieImagesByIdApi,
 } from "../apis/movieApis";
 
 export const getMoviesAction = (keyword) => async (dispatch) => {
@@ -57,6 +62,26 @@ export const getVideoById = (id) => async (dispatch) => {
 	} catch (error) {
 		dispatch({
 			type: MOVIE_TRAILER_FAIL,
+			payload:
+				error.response && error.response.data.messsage
+					? error.response.data.messsage
+					: error.messsage,
+		});
+	}
+};
+
+export const getMovieByIdAction = (id) => async (dispatch) => {
+	try {
+		dispatch({ type: MOVIE_BY_ID_REQUEST });
+		let data = await getMovieByIdApi(id);
+
+		dispatch({
+			type: MOVIE_BY_ID_SUCCESS,
+			payload: data.data,
+		});
+	} catch (error) {
+		dispatch({
+			type: MOVIE_BY_ID_FAIL,
 			payload:
 				error.response && error.response.data.messsage
 					? error.response.data.messsage
