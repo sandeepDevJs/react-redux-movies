@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Index = () => {
 	return (
@@ -6,23 +7,27 @@ const Index = () => {
 			<div className="ui container">
 				<div className="ui centered grid">
 					<div className="center aligned column row">
-						<a
-							className="ui medium header"
-							href="/"
-							style={{ fontFamily: "sans-serif", color: "white" }}
-						>
-							Home
-						</a>
+						<NavLink to="/">
+							<a
+								className="ui medium header"
+								href="/"
+								style={{ fontFamily: "sans-serif", color: "white" }}
+							>
+								Home
+							</a>
+						</NavLink>
 					</div>
 					<hr />
 					<div className="center aligned two column row">
-						<a
-							className="ui medium header"
-							href="/"
-							style={{ fontFamily: "sans-serif", color: "white" }}
-						>
-							About Us
-						</a>
+						<NavLink to="/">
+							<a
+								className="ui medium header"
+								href="/"
+								style={{ fontFamily: "sans-serif", color: "white" }}
+							>
+								About Us
+							</a>
+						</NavLink>
 					</div>
 					<hr />
 					<div className="center aligned two column row">

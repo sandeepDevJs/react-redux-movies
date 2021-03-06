@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Container from "./components/Container";
 import Nav from "./components/headers/Nav";
 import UpperPart from "./components/upperParts/Index";
 import BodyPart from "./components/bodyPart/Index";
