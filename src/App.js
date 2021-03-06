@@ -10,13 +10,11 @@ import "./index.css";
 function App() {
 	return (
 		<Router>
-			<Container>
-				<Nav />
-				<UpperPart />
-				<Route exact path="/" component={BodyPart} />
-				<Route path="/movieinfo/:mid" component={MovieInfoScreen} />
-				<Footers />
-			</Container>
+			<Nav />
+			<UpperPart />
+			<Route exact path="/" component={BodyPart} />
+			<Route path="/movieinfo/:mid" component={MovieInfoScreen} />
+			<Footers />
 		</Router>
 	);
 }

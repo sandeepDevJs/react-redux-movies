@@ -16,9 +16,11 @@ class Trailer extends React.Component {
 				className="ui centered video"
 				style={{
 					backgroundImage: `url(${IMG_API}/${this.props.data.poster_path})`,
+					cursor: "pointer",
 				}}
+				onClick={() => this.openTrailer()}
 			>
-				<i onClick={() => this.openTrailer()} className="fas fa-play"></i>
+				<i className="fas fa-play"></i>
 			</div>
 		);
 	}

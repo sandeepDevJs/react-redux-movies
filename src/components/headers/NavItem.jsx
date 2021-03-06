@@ -1,10 +1,11 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const NavItem = ({ children, href }) => {
 	return (
-		<a href={href} className="item" style={{ color: "white" }}>
+		<NavLink to={href} className="item" style={{ color: "white" }}>
 			{children}
-		</a>
+		</NavLink>
 	);
 };
 

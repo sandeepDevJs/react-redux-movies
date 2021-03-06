@@ -86,7 +86,30 @@ span {
 
 .movie-info-container {
 	height: auto;
-	padding: 18px;
+}
+
+.movie-info-container .info {
+	padding: 20px 8px;
+	display: flex;
+	flex-direction: column;
+}
+
+.play-btn {
+	background-color: transparent;
+	padding: 15px;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.play-btn i {
+	padding: 3px;
+}
+
+.release-box {
+	padding: 2px;
+	border: 1px solid white;
 }
 
 iframe {
@@ -103,5 +126,10 @@ footer div {
 	padding-bottom: 4rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
+	.movie-info-container div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }

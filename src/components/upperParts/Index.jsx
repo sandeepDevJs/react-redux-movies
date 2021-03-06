@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { Button } from "semantic-ui-react";
 import { getMoviesAction } from "../../actions/movieActions";
 
@@ -10,6 +11,7 @@ const Index = (props) => {
 		e.preventDefault();
 		let keyword = ref.current.value;
 		props.getMoviesAction(keyword);
+		props.history.push("/");
 	};
 
 	return (
@@ -59,4 +61,4 @@ const Index = (props) => {
 	);
 };
 
-export default connect(null, { getMoviesAction })(Index);
+export default withRouter(connect(null, { getMoviesAction })(Index));
