@@ -78,29 +78,25 @@ class MovieInfoScreen extends React.Component {
 										{this.props.videoInfo.movies.status}
 									</span>
 								</p>
-								<p>
-									<div className="rating-circle" style={{ float: "left" }}>
-										{this.props.videoInfo.movies.vote_average}
-									</div>
-									<button
-										className="play-btn"
-										onClick={() => this.openTrailer()}
-									>
-										<i className="fas fa-play"></i>
-										Play Trailer
-									</button>
-								</p>
+
+								<div className="rating-circle" style={{ float: "left" }}>
+									{this.props.videoInfo.movies.vote_average}
+								</div>
+								<button className="play-btn" onClick={() => this.openTrailer()}>
+									<i className="fas fa-play"></i>
+									Play Trailer
+								</button>
+
 								<br />
 								<p>
 									<i>{this.props.videoInfo.movies.tagline}</i>
 								</p>
-								<p>
-									<h2 className="ui header" style={{ color: "#d4e2d4" }}>
-										Overview
-									</h2>
-									<p style={{ color: "#d4e2d4", fontSize: "17px" }}>
-										{this.props.videoInfo.movies.overview}
-									</p>
+								<h2 className="ui header" style={{ color: "#d4e2d4" }}>
+									Overview
+								</h2>
+
+								<p style={{ color: "#d4e2d4", fontSize: "17px" }}>
+									{this.props.videoInfo.movies.overview}
 								</p>
 							</div>
 						</div>

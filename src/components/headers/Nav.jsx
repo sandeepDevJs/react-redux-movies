@@ -1,5 +1,7 @@
 import React from "react";
 import NavItem from "./NavItem";
+import { AuthContext } from "../../contexts/authContext";
+import { signInWithGoogle, logOut } from "../../shared/firebase";
 
 const Nav = () => {
 	return (
@@ -14,6 +16,18 @@ const Nav = () => {
 			<div className="ui container">
 				<NavItem>Home</NavItem>
 				<NavItem>About</NavItem>
+				<div className="right menu">
+					<AuthContext.Consumer>
+						{(value) =>
+							value &&
+							(value.displayName ? (
+								<NavItem onClick={logOut}>{value.displayName}</NavItem>
+							) : (
+								<NavItem onClick={signInWithGoogle}>SignUp/login</NavItem>
+							))
+						}
+					</AuthContext.Consumer>
+				</div>
 			</div>
 		</div>
 	);

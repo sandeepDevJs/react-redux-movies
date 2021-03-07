@@ -49,9 +49,9 @@ const Index = (props) => {
 						<form onSubmit={(e) => searchMovie(e)}>
 							<div className="ui fluid icon input">
 								<input type="text" ref={ref} placeholder="Search Movies..." />
-								<Button type="submit">
+								<button className="ui button" type="submit">
 									<i className="search icon"></i>
-								</Button>
+								</button>
 							</div>
 						</form>
 					</div>

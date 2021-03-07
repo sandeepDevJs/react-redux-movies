@@ -1,8 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
+import { signInWithGoogle } from "../../shared/firebase";
 import { getUpcomingsAction } from "../../actions/movieActions";
 import Trailer from "./Trailer";
 import Modal from "../Modal";
+import { AuthContext } from "../../contexts/authContext";
 
 class lowerBox extends React.Component {
 	constructor(props) {
@@ -14,7 +16,6 @@ class lowerBox extends React.Component {
 
 	componentDidMount() {
 		this.props.getUpcomingsAction();
-		console.log(this.props.upcomingState);
 	}
 
 	changeModal = (bool) => {
@@ -68,7 +69,20 @@ class lowerBox extends React.Component {
 						if it's in theatres, on TV or available on popular streaming
 						services like Netflix, Amazon Prime Video, Jio Cinema, and Viu.
 					</p>
-					<button className="ui primary button">Sign Up</button>
+					{
+						<AuthContext.Consumer>
+							{(value) =>
+								!value.displayName && (
+									<button
+										className="ui primary button"
+										onClick={signInWithGoogle}
+									>
+										Sign Up
+									</button>
+								)
+							}
+						</AuthContext.Consumer>
+					}
 				</div>
 				<Modal open={this.state.open} modalFun={this.changeModal} />
 			</div>

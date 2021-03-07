@@ -5,8 +5,15 @@ import { connect } from "react-redux";
 import { getMoviesAction } from "../../actions/movieActions";
 import LowerBox from "./lowerBox";
 import Modal from "../Modal";
+import { AuthContext } from "../../contexts/authContext";
 
 class Index extends Component {
+	componentWillMount() {
+		if (!this.context.displayName) {
+			this.props.history.push("/");
+		}
+	}
+
 	componentDidMount() {
 		this.props.getMoviesAction();
 	}
@@ -43,6 +50,8 @@ class Index extends Component {
 		);
 	}
 }
+
+Index.contextType = AuthContext;
 
 const mapStateToProps = (state) => {
 	return {

@@ -7,26 +7,22 @@ const Index = () => {
 			<div className="ui container">
 				<div className="ui centered grid">
 					<div className="center aligned column row">
-						<NavLink to="/">
-							<a
-								className="ui medium header"
-								href="/"
-								style={{ fontFamily: "sans-serif", color: "white" }}
-							>
-								Home
-							</a>
+						<NavLink
+							to="/"
+							className="ui medium header"
+							style={{ fontFamily: "sans-serif", color: "white" }}
+						>
+							Home
 						</NavLink>
 					</div>
 					<hr />
 					<div className="center aligned two column row">
-						<NavLink to="/">
-							<a
-								className="ui medium header"
-								href="/"
-								style={{ fontFamily: "sans-serif", color: "white" }}
-							>
-								About Us
-							</a>
+						<NavLink
+							to="/"
+							className="ui medium header"
+							style={{ fontFamily: "sans-serif", color: "white" }}
+						>
+							About Us
 						</NavLink>
 					</div>
 					<hr />
