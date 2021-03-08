@@ -15,7 +15,7 @@ const Nav = () => {
 		>
 			<div className="ui container">
 				<NavItem>Home</NavItem>
-				<NavItem>About</NavItem>
+				<NavItem href="#about">About</NavItem>
 				<div className="right menu">
 					<AuthContext.Consumer>
 						{(value) =>

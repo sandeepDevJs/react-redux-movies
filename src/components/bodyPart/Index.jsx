@@ -8,12 +8,6 @@ import Modal from "../Modal";
 import { AuthContext } from "../../contexts/authContext";
 
 class Index extends Component {
-	componentWillMount() {
-		if (!this.context.displayName) {
-			this.props.history.push("/");
-		}
-	}
-
 	componentDidMount() {
 		this.props.getMoviesAction();
 	}

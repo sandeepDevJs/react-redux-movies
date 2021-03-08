@@ -45,11 +45,8 @@ class MovieInfoScreen extends React.Component {
 							<div className="column">
 								<Movie isOnInfoPage data={this.props.videoInfo.movies} />
 							</div>
-							<div
-								className="ui eight wide column info"
-								style={{ color: "#d4e2d4" }}
-							>
-								<h2 className="ui header" style={{ color: "#d4e2d4" }}>
+							<div className="ui eight wide column info">
+								<h2 className="ui header">
 									{this.props.videoInfo.movies.original_title}
 								</h2>
 								<p>
@@ -91,11 +88,9 @@ class MovieInfoScreen extends React.Component {
 								<p>
 									<i>{this.props.videoInfo.movies.tagline}</i>
 								</p>
-								<h2 className="ui header" style={{ color: "#d4e2d4" }}>
-									Overview
-								</h2>
+								<h2 className="ui header">Overview</h2>
 
-								<p style={{ color: "#d4e2d4", fontSize: "17px" }}>
+								<p style={{ fontSize: "17px" }}>
 									{this.props.videoInfo.movies.overview}
 								</p>
 							</div>

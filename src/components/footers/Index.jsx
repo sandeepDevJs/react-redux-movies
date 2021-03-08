@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Index = () => {
 	return (
-		<footer>
+		<footer id="about">
 			<div className="ui container">
 				<div className="ui centered grid">
 					<div className="center aligned column row">
@@ -18,7 +18,7 @@ const Index = () => {
 					<hr />
 					<div className="center aligned two column row">
 						<NavLink
-							to="/"
+							to="#about"
 							className="ui medium header"
 							style={{ fontFamily: "sans-serif", color: "white" }}
 						>
